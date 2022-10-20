@@ -1,4 +1,4 @@
-# 30 --> hard_game scenario
+# 23 --> hard_game scenario
 
 """
 hangman.py
