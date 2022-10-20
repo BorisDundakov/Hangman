@@ -2,7 +2,7 @@ from Game.game import Game
 
 
 class MediumGame(Game):
-    N_LIVES = 20
+    N_LIVES = 18
     GAME_TYPE = 'medium'
 
     def __init__(self):

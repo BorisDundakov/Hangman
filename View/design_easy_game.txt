@@ -1,0 +1,57 @@
+# 30 --> hard_game scenario
+
+"""
+hangman.py
+_____________
+            |
+            |
+            |
+         ________
+        |       |
+        |_______|
+            |
+            |
+        ----|----
+            |
+            |
+           | \
+          |   \
+         |     \
+
+"""
+
+start = "_____________"
+
+rope_1 = "    |\n"
+rope_2 = "    |\n"
+rope_3 = "    |\n"
+
+head_1 = "________\n"
+head_2 = "        |" \
+         "        |\n"
+
+head_3 = "________\n"
+head_4 = "|"\
+         "|\n"
+
+
+torso_1 = " |\n"
+torso_2 = " |\n"
+torso_3 = " |\n"
+torso_4 = " |\n"
+torso_5 = " |\n"
+
+hand_left = "  --|"
+hand_left_2 = "----|"
+hand_right ="--"
+hand_right_2 ="----"
+
+leg_left_1 ="      /\n"
+leg_left_2 ="     /\n"
+leg_left_3 ="    /\n"
+
+
+leg_right ="        \\n"
+leg_right_1 ="        \\n"
+leg_right_2 ="         \\n"
+

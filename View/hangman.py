@@ -30,8 +30,6 @@ class Hangman(Display):
         # print different results according to the different game_type
         pass
 
-    head = "________" \
-           "|      |" \
-           "|______|"
+
 
 
