@@ -18,11 +18,20 @@ _____________
 
 """
 
+from View.display import Display
 
-class Figure:
+
+class Hangman(Display):
     def __init__(self, game_type):
+        super().__init__()
+        self.game_type = game_type
+
+    def wrong_move(self, counter):
+        # print different results according to the different game_type
         pass
 
-    def make_move(self, game_type, counter):
-        pass
+    head = "________" \
+           "|      |" \
+           "|______|"
+
 
