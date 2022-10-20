@@ -9,3 +9,5 @@ class Game:
     def check_winner(self):
         pass
 
+    def get_class_name(self):
+        return self.__class__.__name__
