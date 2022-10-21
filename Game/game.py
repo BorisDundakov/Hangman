@@ -6,8 +6,11 @@ class Game:
         self.game_type = game_type
         self.n_lives = n_lives
 
-    def check_winner(self):
-        pass
+    @staticmethod
+    def check_winner(word):
+        if word.isalpha():
+            return True
+        return False
 
     def get_class_name(self):
         return self.__class__.__name__
