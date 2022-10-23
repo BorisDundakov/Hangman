@@ -1,3 +1,5 @@
+import random
+
 from Menu.menu import Menu
 from Word.word import Word
 from View import messages
@@ -5,8 +7,15 @@ from View import messages
 if __name__ == "__main__":
     menu = Menu()
     game = menu.choose_game_type()
-    # TODO: word to be randomly selected from a postresql DB of words
-    word = Word('forgotten')
+
+    database = open("DemoDB/wordsDB.txt", "r")
+    data = database.read()
+    format_DB = data.split("\n")
+    guess_word = (random.choice(format_DB))
+    database.close()
+
+    word = Word(guess_word)
+
     word.display_initial()
     previous_guess = ''
     while game.N_LIVES > 0:
