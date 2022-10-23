@@ -39,3 +39,4 @@ if __name__ == "__main__":
                 exit()
 
     print(messages.loser)
+    print(messages.actual_word(word))
