@@ -11,3 +11,4 @@ The current version of the project includes the core idea and logic of the game.
 In the next couple of days the following features will be implemented:
 - Visual representation of the Hangman stick dependent on difficulty selected
 - Randomly selecting a word from a PostgreSQL Database
+- Code will be optimized
