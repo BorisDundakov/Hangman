@@ -50,20 +50,20 @@ if __name__ == "__main__":
 
     if game.GAME_TYPE == 'hard':
         print(messages.timer_length)
-        p1 = Process(target=game.run_timer)
-        p2 = Process(target=game_logic, args=(game, word))
-        p1.start()
-        p2.start()
-        while p1.is_alive():
-            if not p2.is_alive():
+        timer_process = Process(target=game.run_timer)
+        guess_process = Process(target=game_logic, args=(game, word))
+        timer_process.start()
+        guess_process.start()
+        while timer_process.is_alive():
+            if not guess_process.is_alive():
                 # 'successful guess or too many guesses!'
-                p1.terminate()
+                timer_process.terminate()
                 exit()
 
         else:
             print(messages.time_up)
             print(messages.actual_word(word))
-            p2.terminate()
+            guess_process.terminate()
             exit()
     else:
         print(game_logic(game, word))
