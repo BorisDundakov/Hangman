@@ -32,7 +32,7 @@ def game_logic(game, word):
                 return messages.winner
 
     print(messages.actual_word(word))
-    print(messages.loser)
+    return messages.loser
 
 
 if __name__ == "__main__":
@@ -42,16 +42,14 @@ if __name__ == "__main__":
     database = open("DemoDB/wordsDB.txt", "r")
     data = database.read()
     format_DB = data.split("\n")
-    guess_word = ('two')
-    # guess_word = (random.choice(format_DB))
+    guess_word = (random.choice(format_DB))
     database.close()
 
     word = Word(guess_word)
-
     word.display_initial()
-    # TODO: Two functions --> if one ends, the whole program ends
 
-    # game logic > timer except for when the timer is up!
+    # TODO: If timer ends, game_logic should also end. If game_logic ends timer should also end.
+
     if game.GAME_TYPE == 'hard':
         with ThreadPoolExecutor(max_workers=10) as executor:
             timer = executor.submit(game.run_timer)
@@ -59,5 +57,5 @@ if __name__ == "__main__":
 
     else:
         result = game_logic(game, word)
-
+        print(result)
     exit()
