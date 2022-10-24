@@ -1,7 +1,5 @@
 import random
 import sys
-import time
-from concurrent.futures.thread import ThreadPoolExecutor
 from multiprocessing import Process
 
 from Menu.menu import Menu
@@ -13,7 +11,7 @@ def game_logic(game, word):
     previous_guess = ''
     sys.stdin = open(0)
     while game.N_LIVES > 0:
-        print(messages.letter_guess)
+        print('\r', messages.letter_guess, end=' ')
         guess = word.make_guess((input()))
 
         if guess == False:
@@ -29,6 +27,7 @@ def game_logic(game, word):
             previous_guess = guess
             winner = game.check_winner(guess)
             if winner:
+                print(messages.winner)
                 return messages.winner
 
     print(messages.actual_word(word))
@@ -48,14 +47,23 @@ if __name__ == "__main__":
     word = Word(guess_word)
     word.display_initial()
 
-    # TODO: If timer ends, game_logic should also end. If game_logic ends timer should also end.
-
     if game.GAME_TYPE == 'hard':
-        with ThreadPoolExecutor(max_workers=10) as executor:
-            timer = executor.submit(game.run_timer)
-            w = executor.submit(game_logic, game, word)
+        print(messages.timer_length)
+        p1 = Process(target=game.run_timer)
+        p2 = Process(target=game_logic, args=(game, word))
+        p1.start()
+        p2.start()
+        while p1.is_alive():
+            if not p2.is_alive():
+                # 'successful guess or too many guesses!'
+                p1.terminate()
+                exit()
 
-    else:
-        result = game_logic(game, word)
-        print(result)
-    exit()
+        else:
+            print(messages.time_up)
+            print(messages.actual_word(word))
+            p2.terminate()
+            exit()
+
+    print(game_logic(game, word))
+
