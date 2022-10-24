@@ -27,7 +27,8 @@ def game_logic(game, word):
             previous_guess = guess
             winner = game.check_winner(guess)
             if winner:
-                print(messages.winner)
+                if game.GAME_TYPE == 'hard':
+                    print(messages.winner)
                 return messages.winner
 
     print(messages.actual_word(word))
@@ -64,6 +65,5 @@ if __name__ == "__main__":
             print(messages.actual_word(word))
             p2.terminate()
             exit()
-
-    print(game_logic(game, word))
-
+    else:
+        print(game_logic(game, word))
