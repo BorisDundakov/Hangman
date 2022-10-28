@@ -34,6 +34,9 @@ def game_logic(game, word):
                     print(messages.winner)
                 return messages.winner
 
+    if game.GAME_TYPE == 'hard':
+        print(messages.loser)
+
     print(messages.actual_word(word))
     return messages.loser
 

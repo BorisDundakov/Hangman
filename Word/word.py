@@ -1,7 +1,4 @@
-from View.display import Display
-
-
-class Word(Display):
+class Word:
 
     def __init__(self, word):
         super().__init__()
