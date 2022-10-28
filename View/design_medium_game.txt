@@ -1,4 +1,5 @@
 # 18 --> medium_game scenario
+# 15 ?
 
 """
 hangman.py

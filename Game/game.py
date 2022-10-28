@@ -9,3 +9,6 @@ class Game:
         if word.isalpha():
             return True
         return False
+
+    def display_hangman(self, error_counter):
+        pass

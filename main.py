@@ -10,13 +10,16 @@ from View import messages
 def game_logic(game, word):
     previous_guess = ''
     sys.stdin = open(0)
+    wrong_guesses_counter = 0
     while game.N_LIVES > 0:
         print('\r', messages.letter_guess, end=' ')
         guess = word.make_guess((input()))
 
         if guess == False:
             game.N_LIVES -= 1
+            wrong_guesses_counter += 1
             print(messages.false_guess)
+            print(game.display_hangman(wrong_guesses_counter))
             if previous_guess == '':
                 word.display_initial()
             else:

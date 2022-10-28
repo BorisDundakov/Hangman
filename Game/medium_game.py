@@ -1,4 +1,5 @@
 from Game.game import Game
+from View.Hangman import hangman_easy_game
 
 
 class MediumGame(Game):
