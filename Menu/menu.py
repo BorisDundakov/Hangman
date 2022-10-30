@@ -13,6 +13,8 @@ class Menu:
         for number, g_type in self.game_types.items():
             print(f'{number} - {g_type.GAME_TYPE}')
 
-        game_num = int(input('Please enter a digit: '))
+        game_num = -1
+        while game_num not in self.game_types.keys():
+            game_num = int(input('Please enter a valid digit: '))
 
         return self.game_types[game_num]
