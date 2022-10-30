@@ -11,7 +11,7 @@ class Word:
 
     @word.setter
     def word(self, value):
-        if len(value) < 3:
+        if len(value) < 4:
             raise ValueError("Word is not of a valid size!")
         self.__word = value
 
