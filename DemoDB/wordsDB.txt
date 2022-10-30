@@ -50,7 +50,6 @@ base
 basin
 basket
 bath
-be
 beautiful
 because
 bed
@@ -321,7 +320,6 @@ harmony
 hat
 hate
 have
-he
 head
 healthy
 hear
@@ -344,7 +342,6 @@ how
 humour
 ice
 idea
-if
 ill
 important
 impulse
@@ -751,7 +748,6 @@ till
 time
 tin
 tired
-to
 toe
 together
 tomorrow
@@ -774,7 +770,6 @@ twist
 umbrella
 under
 unit
-up
 use
 value
 verse
