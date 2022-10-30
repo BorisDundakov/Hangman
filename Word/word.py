@@ -3,7 +3,17 @@ class Word:
     def __init__(self, word):
         super().__init__()
         self.word = word
-        self.occurances = []
+        self.occurrences = []
+
+    @property
+    def word(self):
+        return self.__word
+
+    @word.setter
+    def word(self, value):
+        if len(value) < 3:
+            raise ValueError("Word is not of a valid size!")
+        self.__word = value
 
     def display_initial(self):
         res = ''
@@ -20,9 +30,9 @@ class Word:
         new_letter = [i for i, l in enumerate(self.word) if l == letter]
         if not new_letter:
             return False
-        self.occurances.extend(new_letter)
-        if self.occurances:
-            res = self.correct_move(self.occurances)
+        self.occurrences.extend(new_letter)
+        if self.occurrences:
+            res = self.correct_move(self.occurrences)
             return res
 
     def correct_move(self, known_idxs):
