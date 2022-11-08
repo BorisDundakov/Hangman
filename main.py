@@ -46,7 +46,7 @@ if __name__ == "__main__":
     menu = Menu()
     game = menu.choose_game_type()
 
-    # .txt file as DB variant:
+    # Hangman 1.0:
     # --------------------------
     # database = open("DemoDB/wordsDB.txt", "r")
     # data = database.read()
