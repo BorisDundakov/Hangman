@@ -20,7 +20,11 @@ class Word:
         for letter in range(len(self.word)):
             if letter == 0:
                 res += f'{self.word[letter]}'
-            if letter == len(self.word) - 1:
+            elif letter == len(self.word) - 1:
+                res += f'{self.word[letter]}'
+            elif self.word[letter] == self.word[0]:
+                res += f'{self.word[letter]}'
+            elif self.word[letter] == self.word[-1]:
                 res += f'{self.word[letter]}'
             else:
                 res += '_'
@@ -30,7 +34,11 @@ class Word:
         new_letter = [i for i, l in enumerate(self.word) if l == letter]
         if not new_letter:
             return False
+
+        repeating_letters = [i for i, l in enumerate(self.word) if l == self.word[0] or l == self.word[-1]]
+
         self.occurrences.extend(new_letter)
+        self.occurrences.extend(repeating_letters)
         if self.occurrences:
             res = self.correct_move(self.occurrences)
             return res
