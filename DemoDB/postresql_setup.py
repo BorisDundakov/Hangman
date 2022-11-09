@@ -23,11 +23,8 @@ def random_word():
 
     cur = conn.cursor()
     cur.execute("SELECT word FROM words ORDER BY random() LIMIT 1")
-    res = cur.fetchall()
-    word = ''
-    for el in res:
-        word = ''.join(el)
-        break
+    word_as_tuple = cur.fetchone()
+    word = word_as_tuple[0]
     cur.close()
     conn.close()
     return word
