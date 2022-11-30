@@ -16,14 +16,5 @@ pipeline {
         echo '3'
       }
     }
-    stage ('test'){
-      when {
-        expression{
-          {
-            env.NODE_NAME == "HangmanGameNode"
-          }
-          steps {
-          echo "Hello from test"
-          }
   }
 }
