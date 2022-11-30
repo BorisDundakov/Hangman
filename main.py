@@ -5,7 +5,6 @@ from multiprocessing import Process
 from Menu.menu import Menu
 from Word.word import Word
 from View import messages
-from DemoDB import postresql_setup
 
 
 def game_logic(game, word):
@@ -46,20 +45,18 @@ if __name__ == "__main__":
     menu = Menu()
     game = menu.choose_game_type()
 
-    # Hangman 1.0:
-    # --------------------------
-    # database = open("DemoDB/wordsDB.txt", "r")
-    # data = database.read()
-    # format_DB = data.split("\n")
-    # guess_word = (random.choice(format_DB))
-    # database.close()
-    # -----------------------
-
     database = open("DemoDB/wordsDB.txt", "r")
     data = database.read()
     format_DB = data.split("\n")
-    postresql_setup.insert_data(format_DB)
-    guess_word = postresql_setup.random_word()
+    guess_word = random.choice(format_DB)
+    database.close()
+
+    # Hangman 2.0
+    # database = open("DemoDB/wordsDB.txt", "r")
+    # data = database.read()
+    # format_DB = data.split("\n")
+    # postresql_setup.insert_data(format_DB)
+    # guess_word = postresql_setup.random_word()
 
     word = Word(guess_word)
     word.display_initial()
