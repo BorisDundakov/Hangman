@@ -9,7 +9,7 @@ pipeline {
     stage('run program'){
       steps {
       sh 'python3 main.py'
-      sh '3'
+      sh '% echo "3" | main.py'
       }
     }
     stage('choose level'){
