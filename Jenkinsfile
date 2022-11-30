@@ -11,5 +11,10 @@ pipeline {
       sh 'python3 main.py'
       }
     }
+    stage('choose level'){
+      steps {
+        sh '3'
+      }
+    }
   }
 }
