@@ -8,12 +8,12 @@ pipeline {
     }
     stage('run program'){
       steps {
-      sh 'python3 main.py'
+      echo 'hello'
       }
     }
     stage('choose level'){
       steps {
-        sh '3'
+        echo 'world'
       }
     }
   }
