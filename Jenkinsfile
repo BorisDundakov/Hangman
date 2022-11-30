@@ -1,7 +1,12 @@
 pipeline {
   agent {
     label "hangman"
-  }
+    }
+  parameters {
+    string (name: 'Version', defaulvalue: 'abc', description:'initial version')
+  
+    }
+  
   stages{
     stage('version'){
       steps {
