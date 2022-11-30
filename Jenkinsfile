@@ -13,7 +13,7 @@ pipeline {
     }
     stage('choose level'){
       steps {
-        sh '3'
+        sh 3
       }
     }
   }
