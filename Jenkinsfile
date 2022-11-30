@@ -1,6 +1,6 @@
 pipeline {
   agent {
-    label ="hangman game"
+    label "hangman"
   }
   stages{
     stage('version'){
