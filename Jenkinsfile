@@ -3,7 +3,7 @@ pipeline {
     label "hangman"
     }
   parameters {
-    string (name: 'Version', defaulValue: 'abc', description:'initial version')
+    string (name: 'Version', defaultValue: 'abc', description:'initial version')
   
     }
   
