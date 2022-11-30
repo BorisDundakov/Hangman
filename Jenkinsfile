@@ -4,6 +4,7 @@ pipeline {
     }
   parameters {
     string (name: 'Version', defaultValue: 'abc', description:'initial version')
+    choice (name: 'Version', defaultValue: 'abc', description:'initial version')
   
     }
   
