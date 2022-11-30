@@ -8,12 +8,22 @@ pipeline {
     }
     stage('run program'){
       steps {
-      sh 'python3 main.py'
+      echo 'python3 main.py'
       }
     }
     stage('choose level'){
       steps {
-        sh '3'
+        echo '3'
+      }
+    }
+    post{
+      always{
+        echo 'always'}
+      success{
+        echo 'success'}
+      failure
+      {
+        echo 'failure'
       }
     }
   }
