@@ -76,10 +76,10 @@ if __name__ == "__main__":
                 timer_process.terminate()
                 exit()
 
-        else:
-            print(messages.time_up)
-            print(messages.actual_word(word))
-            guess_process.terminate()
-            exit()
+            else:
+                print(messages.time_up)
+                print(messages.actual_word(word))
+                guess_process.terminate()
+                exit()
     else:
         print(game_logic(game, word))
