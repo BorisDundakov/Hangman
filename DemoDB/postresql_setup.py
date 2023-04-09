@@ -2,11 +2,13 @@ import psycopg2
 
 conn = psycopg2.connect(
     host='localhost',
-    database='DB_hangman',
+    database='postgres',
     user='postgres',
     password='133'
 )
 
+
+# 
 
 def insert_data(data):
     """ insert all words into the words table  """
@@ -14,7 +16,7 @@ def insert_data(data):
     cur = conn.cursor()
     # cur.executemany(insert_statement, data)
     for word in data:
-        cur.execute("INSERT INTO words (word) VALUES(%s)", (word,))
+        cur.execute("INSERT INTO words (word) SELECT %s WHERE NOT EXISTS (SELECT 1 FROM words WHERE word = %s)", (word, word))
         conn.commit()
 
 
