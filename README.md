@@ -52,7 +52,7 @@ of attempts to guess the word.
 ```
 
 
-## Current Version - Hangman 2.0
+## Current Version - Hangman 2.1
 - Implementation of OOP principles
 - Visual features and game rules depending on difficulty selected (displaying the word and the hanging man)
 - Hard difficulty implements a timer [fix soon]
