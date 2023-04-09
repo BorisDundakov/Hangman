@@ -1,6 +1,6 @@
 # Hangman
 
-
+![Screenshot from 2023-04-09 11-52-03](https://user-images.githubusercontent.com/71731579/230766856-ea4aef6e-a640-4a37-8b28-3afaf207493a.png)
 
 Object-Oriented console version of the classic Hangman game. The user is handled a word and has 'N' number
 of attempts to guess the word.
@@ -26,6 +26,10 @@ of attempts to guess the word.
     ALTER TABLE IF EXISTS public.words
         OWNER to postgres;
     ```
+  
+  ![Screenshot from 2023-04-09 12-41-07](https://user-images.githubusercontent.com/71731579/230767008-7f9e89fe-fa61-435a-bf47-af00a8e9b423.png)
+  
+
 
 - psycopg installed 
     ```
