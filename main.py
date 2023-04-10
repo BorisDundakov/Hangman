@@ -16,7 +16,7 @@ def game_logic(game, word):
         print('\r', messages.letter_guess, end=' ')
         guess = word.make_guess((input()))
 
-        if guess == False:
+        if not guess:
             game.N_LIVES -= 1
             wrong_guesses_counter += 1
             print(messages.false_guess)
@@ -76,10 +76,10 @@ if __name__ == "__main__":
                 timer_process.terminate()
                 exit()
 
-            else:
-                print(messages.time_up)
-                print(messages.actual_word(word))
-                guess_process.terminate()
-                exit()
+        print(messages.time_up)
+        print(messages.actual_word(word))
+        guess_process.terminate()
+        exit()
+
     else:
         print(game_logic(game, word))

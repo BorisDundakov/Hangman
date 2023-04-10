@@ -55,9 +55,9 @@ of attempts to guess the word.
 ## Current Version - Hangman 2.1
 - Implementation of OOP principles
 - Visual features and game rules depending on difficulty selected (displaying the word and the hanging man)
-- Hard difficulty implements a timer [fix soon]
+- Hard difficulty implements a timer
 - Random word is selected from a PostgreSQL Database
 
 ## Additional Information
-- Database source --> https://github.com/Xethron/Hangman/blob/master/words.txt
+- Database source - https://github.com/Xethron/Hangman/blob/master/words.txt
 - Previous version of the project was set up with a .txt file as a database
